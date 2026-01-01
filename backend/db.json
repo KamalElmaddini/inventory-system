@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop Dell XPS",
+      "category": "Electronics",
+      "quantity": 5,
+      "price": 1200,
+      "minStock": 3
+    },
+    {
+      "id": 2,
+      "name": "Office Chair",
+      "category": "Furniture",
+      "quantity": 15,
+      "price": 150,
+      "minStock": 5
+    },
+    {
+      "id": 3,
+      "name": "Monitor LG 27\"",
+      "category": "Electronics",
+      "quantity": 2,
+      "price": 300,
+      "minStock": 5
+    },
+    {
+      "id": 1765291181039,
+      "name": "Asus Zenbook",
+      "category": "Laptop",
+      "quantity": 12,
+      "price": 1500,
+      "minStock": 3
+    }
+  ]
+}
