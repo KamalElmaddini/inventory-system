@@ -23,7 +23,7 @@ const Inventory = ({ role, theme }) => {
 
     const fetchProducts = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/products');
+            const res = await axios.get('/api/products');
             setProducts(res.data);
             setLoading(false);
         } catch (err) {
@@ -36,7 +36,7 @@ const Inventory = ({ role, theme }) => {
         if (role !== 'admin') return;
         if (!window.confirm("Are you sure?")) return;
         try {
-            await axios.delete(`http://localhost:5000/api/products/${id}`);
+            await axios.delete(`/api/products/${id}`);
             fetchProducts();
         } catch (err) { alert("Failed to delete"); }
     };
@@ -65,9 +65,9 @@ const Inventory = ({ role, theme }) => {
             };
 
             if (currentItem) {
-                await axios.put(`http://localhost:5000/api/products/${currentItem.id}`, payload);
+                await axios.put(`/api/products/${currentItem.id}`, payload);
             } else {
-                await axios.post('http://localhost:5000/api/products', payload);
+                await axios.post('/api/products', payload);
             }
             setIsModalOpen(false);
             fetchProducts();

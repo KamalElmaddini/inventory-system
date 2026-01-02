@@ -16,7 +16,7 @@ const Login = ({ setAuth, theme, toggleTheme }) => {
         const endpoint = isRegistering ? '/api/auth/register' : '/api/auth/login';
 
         try {
-            const res = await axios.post(`http://localhost:5000${endpoint}`, formData);
+            const res = await axios.post(`${endpoint}`, formData);
 
             if (isRegistering) {
                 setIsRegistering(false);

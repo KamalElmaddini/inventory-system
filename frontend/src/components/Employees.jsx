@@ -15,7 +15,7 @@ const Employees = ({ theme }) => {
 
     const fetchUsers = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/users');
+            const res = await axios.get('/api/users');
             setUsers(res.data);
             setLoading(false);
         } catch (err) {
@@ -28,7 +28,7 @@ const Employees = ({ theme }) => {
     const handleAddUser = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/users', newUser);
+            await axios.post('/api/users', newUser);
             setNewUser({ username: '', password: '', role: 'employee' });
             setShowAddForm(false);
             fetchUsers();
@@ -44,7 +44,7 @@ const Employees = ({ theme }) => {
         if (!isAdmin && !window.confirm("Are you sure you want to remove this employee?")) return;
 
         try {
-            const response = await axios.delete(`http://localhost:5000/api/users/${id}`);
+            const response = await axios.delete(`/api/users/${id}`);
 
             if (response.status === 200) {
                 alert("Success: User deleted.");

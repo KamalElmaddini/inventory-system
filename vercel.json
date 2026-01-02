@@ -7,12 +7,16 @@
             "config": {
                 "distDir": "frontend/dist"
             }
+        },
+        {
+            "src": "api/index.js",
+            "use": "@vercel/node"
         }
     ],
     "rewrites": [
         {
             "source": "/api/(.*)",
-            "destination": "http://inventory-backend.vercel.app/api/$1"
+            "destination": "/api/index.js"
         },
         {
             "source": "/(.*)",
