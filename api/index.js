@@ -13,6 +13,9 @@ module.exports = async (req, res) => {
         console.log("Current directory:", __dirname);
         console.log("ENV VERCEL:", process.env.VERCEL);
 
+        // Force Vercel to bundle sqlite3 (Sequelize uses dynamic require which Vercel misses)
+        require('sqlite3');
+
         const app = require('../backend/src/app');
         const sequelize = require('../backend/src/config/database');
         const Product = require('../backend/src/models/Product');
