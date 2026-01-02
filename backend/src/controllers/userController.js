@@ -33,13 +33,11 @@ const deleteUser = async (req, res) => {
     try {
         const { id } = req.params;
         const userId = parseInt(id, 10);
-        console.log(`[UserId: ${req.userId}] Attempting to delete user with ID: ${userId} (Raw: ${id})`);
 
         if (isNaN(userId)) return res.status(400).json({ message: "Invalid ID" });
         if (userId === 1) return res.status(403).json({ message: "Cannot delete Admin" });
 
         const result = await User.destroy({ where: { id: userId } });
-        console.log(`Delete result: ${result}`);
 
         if (result === 0) {
             return res.status(404).json({ message: 'User not found or already deleted' });

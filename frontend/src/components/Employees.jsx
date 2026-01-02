@@ -39,7 +39,6 @@ const Employees = ({ theme }) => {
     };
 
     const handleDelete = async (id, isAdmin) => {
-        console.log("Delete Requested for ID:", id);
 
         if (isAdmin && !window.confirm("Deleting an Admin! Are you sure?")) return;
         if (!isAdmin && !window.confirm("Are you sure you want to remove this employee?")) return;

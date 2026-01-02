@@ -34,8 +34,6 @@ const deleteProduct = async (req, res) => {
     try {
         const { id } = req.params;
         const productId = parseInt(id, 10);
-
-        console.log(`Attempting to delete product ID: ${productId} (Raw: ${id})`);
         if (isNaN(productId)) return res.status(400).json({ message: "Invalid ID" });
 
         const result = await Product.destroy({ where: { id: productId } });

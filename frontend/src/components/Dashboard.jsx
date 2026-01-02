@@ -136,6 +136,7 @@ const Dashboard = ({ theme }) => {
                                 </Pie>
                                 <Tooltip
                                     contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)', backgroundColor: theme === 'dark' ? '#1e293b' : '#fff', color: theme === 'dark' ? '#fff' : '#000' }}
+                                    itemStyle={{ color: theme === 'dark' ? '#fff' : '#000' }}
                                 />
                                 <Legend verticalAlign="bottom" height={36} />
                             </PieChart>
@@ -166,6 +167,7 @@ const Dashboard = ({ theme }) => {
                                     <Tooltip
                                         cursor={{ fill: theme === 'dark' ? '#334155' : '#f8fafc' }}
                                         contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', backgroundColor: theme === 'dark' ? '#1e293b' : '#fff', color: theme === 'dark' ? '#fff' : '#000' }}
+                                        itemStyle={{ color: theme === 'dark' ? '#fff' : '#000' }}
                                     />
                                     <Bar dataKey="quantity" fill="#ef4444" radius={[6, 6, 0, 0]} barSize={50} name="Quantity" />
                                 </BarChart>
@@ -202,6 +204,7 @@ const Dashboard = ({ theme }) => {
                                     cursor={{ fill: theme === 'dark' ? '#334155' : '#f8fafc' }}
                                     formatter={(value) => [`$${value.toLocaleString()}`, 'Value']}
                                     contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', backgroundColor: theme === 'dark' ? '#1e293b' : '#fff', color: theme === 'dark' ? '#fff' : '#000' }}
+                                    itemStyle={{ color: theme === 'dark' ? '#fff' : '#000' }}
                                 />
                                 <Bar dataKey="value" fill="#10b981" radius={[6, 6, 0, 0]} barSize={50} name="Value" />
                             </BarChart>
@@ -229,6 +232,7 @@ const Dashboard = ({ theme }) => {
                                 <Tooltip
                                     cursor={{ fill: theme === 'dark' ? '#334155' : '#f8fafc' }}
                                     contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', backgroundColor: theme === 'dark' ? '#1e293b' : '#fff', color: theme === 'dark' ? '#fff' : '#000' }}
+                                    itemStyle={{ color: theme === 'dark' ? '#fff' : '#000' }}
                                 />
                                 <Bar dataKey="value" fill="#3b82f6" radius={[6, 6, 0, 0]} barSize={50} name="Quantity" />
                             </BarChart>
