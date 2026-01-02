@@ -5,7 +5,7 @@ const Product = require('../backend/src/models/Product');
 const User = require('../backend/src/models/User');
 const bcrypt = require('bcryptjs');
 
-// Helper to seed initial data if DB is empty (since /tmp is ephemeral)
+// Helper to seed initial data if DB is empty
 const seedDatabase = async () => {
     try {
         await sequelize.sync(); // Create tables
@@ -20,10 +20,23 @@ const seedDatabase = async () => {
         }
     } catch (error) {
         console.error("Database seed error:", error);
+        throw error; // Re-throw to catch in the handler
     }
 };
 
-// Initialize DB on cold start
-seedDatabase();
+module.exports = async (req, res) => {
+    try {
+        // Ensure DB is ready before handling request
+        await seedDatabase();
 
-module.exports = app;
+        // Forward to Express app
+        return app(req, res);
+    } catch (error) {
+        console.error("Serverless Function Error:", error);
+        res.status(500).json({
+            message: "Critical Server Error",
+            error: error.message,
+            stack: error.stack
+        });
+    }
+};
