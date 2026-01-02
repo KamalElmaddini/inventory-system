@@ -7,6 +7,8 @@
 
 A powerful, efficient, and user-friendly inventory management solution designed to streamline product tracking and business operations. Built with a robust Node.js backend and a dynamic React frontend.
 
+[**View Live Demo**](https://inventory-system-nine-zeta.vercel.app/)
+
 ## ✨ Features
 
 - **📊 Interactive Dashboard**: Real-time overview of total products, stock levels, and store value with beautiful charts (Recharts).
