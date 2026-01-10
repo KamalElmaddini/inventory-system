@@ -72,8 +72,7 @@ npm start
 
 ## 📸 Screenshots
 
-*(Add screenshots of your dashboard, login screen, and product list here)*
-
+![Inventory Management System](./frontend/public/Screenshot1.png)
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
